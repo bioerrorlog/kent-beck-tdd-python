@@ -1,4 +1,4 @@
-from src.money import Dollar
+from src.money.dollar import Dollar
 
 class MoneyTest:
     def test_multiplication():
