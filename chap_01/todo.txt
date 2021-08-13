@@ -1,5 +1,9 @@
 - $5 + 10CHF = $10 (レートが2:1の場合)
-- $5 * 2 = $10
+done - $5 * 2 = $10
 - amountをprivateにする
-- Dollarの副作用どうする？
+done - Dollarの副作用どうする？
 - Moneyの丸め処理どうする？
+- equals()
+- hash_code()
+- Noneとの等価性比較
+- 他のオブジェクトとの等価性比較
