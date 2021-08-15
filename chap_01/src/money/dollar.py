@@ -1,27 +1,30 @@
-
-
-class Dollar:
+class Money:
     def __init__(self, amount):
         self.amount = amount
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
 
-    def times(self, multiplier):
-        return Dollar(self.amount * multiplier)
+    @staticmethod
+    def dollar(amount):
+        return Dollar(amount)
 
     def equals(self, object):
-        return self.amount == object.amount 
+        return (
+            self.amount == object.amount and
+            isinstance(object, self.__class__)
+        )
 
-class Franc:
+class Dollar(Money):
     def __init__(self, amount):
-        self.amount = amount
-
-    def __eq__(self, other):
-        return self.__dict__ == other.__dict__
+        super().__init__(amount)
 
     def times(self, multiplier):
-        return Franc(self.amount * multiplier)
+        return Money(self.amount * multiplier)
 
-    def equals(self, object):
-        return self.amount == object.amount 
+class Franc(Money):
+    def __init__(self, amount):
+        super().__init__(amount)
+
+    def times(self, multiplier):
+        return Money(self.amount * multiplier)
