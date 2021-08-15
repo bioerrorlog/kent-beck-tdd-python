@@ -7,3 +7,7 @@ done - Dollarの副作用どうする？
 - hash_code()
 - Noneとの等価性比較
 - 他のオブジェクトとの等価性比較
+done - 5CHF * 2 = 10CHF
+- DollarとFrancの重複
+- equalsの一般化
+- timesの一般化
