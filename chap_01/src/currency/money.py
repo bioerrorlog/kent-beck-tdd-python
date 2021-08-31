@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class Money(ABC):
-    def __init__(self, amount):
+    def __init__(self, amount, currency):
         self.amount = amount
-        self._currency = None
+        self._currency = currency
 
     def __eq__(self, other):
         return self.__dict__ == other.__dict__
@@ -33,8 +33,7 @@ class Money(ABC):
 
 class Dollar(Money):
     def __init__(self, amount, currency):
-        super().__init__(amount)
-        self._currency = currency
+        super().__init__(amount, currency)
 
     def times(self, multiplier):
         return Money.dollar(self.amount * multiplier)
@@ -42,8 +41,7 @@ class Dollar(Money):
 
 class Franc(Money):
     def __init__(self, amount, currency):
-        super().__init__(amount)
-        self._currency = currency
+        super().__init__(amount, currency)
 
     def times(self, multiplier):
         return Money.franc(self.amount * multiplier)
