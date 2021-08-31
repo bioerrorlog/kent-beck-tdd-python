@@ -1,3 +1,6 @@
+from abc import ABCMeta, abstractmethod
+
+
 class Money:
     def __init__(self, amount):
         self.amount = amount
@@ -15,12 +18,14 @@ class Money:
             isinstance(object, self.__class__)
         )
 
+
 class Dollar(Money):
     def __init__(self, amount):
         super().__init__(amount)
 
     def times(self, multiplier):
         return Money(self.amount * multiplier)
+
 
 class Franc(Money):
     def __init__(self, amount):
