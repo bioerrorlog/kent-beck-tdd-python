@@ -1,4 +1,4 @@
-from src.money.dollar import Money
+from src.currency.money import Money
 
 
 class TestMoney:
@@ -21,4 +21,4 @@ class TestMoney:
 
     def test_currency(self):
         assert 'USD' == Money.dollar(1).currency()
-        assert 'CHF' == Money.franc(1).currency
+        assert 'CHF' == Money.franc(1).currency()
