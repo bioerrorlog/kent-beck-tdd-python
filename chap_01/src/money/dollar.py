@@ -1,7 +1,5 @@
-from abc import ABCMeta, abstractmethod
 
-
-class Money:
+class Money():
     def __init__(self, amount):
         self.amount = amount
 
@@ -12,11 +10,18 @@ class Money:
     def dollar(amount):
         return Dollar(amount)
 
+    @staticmethod
+    def franc(amount):
+        return Franc(amount)
+
     def equals(self, object):
         return (
             self.amount == object.amount and
             isinstance(object, self.__class__)
         )
+
+    def times(self, multiplier):
+        return Money(self.amount * multiplier)
 
 
 class Dollar(Money):
